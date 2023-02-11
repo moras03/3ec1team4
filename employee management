@@ -1,1 +1,94 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct emp
+{
+    char name[50];
+    int age;
+    char empid[50];
+    float salary;
+};
+struct emp employee[10];
+int ecount=0;
+void addemp()
+{
+    if(ecount==5)
+    {
+        printf("Cannot add more employees");
+        return;
+    }
+    printf("Enter the Name\n");
+    scanf("%s",employee[ecount].name);
+    printf("Enter the age\n");
+    scanf("%d",&employee[ecount].age);
+    printf("Enter the employee ID\n");
+    scanf("%s",employee[ecount].empid);
+    printf("Enter the salary\n");
+    scanf("%f",&employee[ecount].salary);
+    ecount++;
+    printf("Employee added successfully");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+int main()
+{
+int choice();
+
+{
+    printf("____Employee management system____\n");
+    printf("\tMAIN MENU\n");
+    int op;
+    while(1)
+    {
+        system("cls");
+        printf("1>>LIST RECORDS OF ALL EMPLOYEE.\n"); 
+        printf("2>>ADD EMPLOYEE RECORD.\n");
+        printf("3>>DELETE EMPLOYEE RECORD.\n");
+        printf("4>>SEARCH A PARTICULR EMPLOYEE.\n");
+        printf("5>>MODIFY INFORMATION OF A EMPLOYEE.\n");
+        printf("ENTER YOUR CHOICE\n");
+        scanf("%d",&op);
+        switch(op)
+        {
+        case '1': listemp();
+                    break;
+        case '2': addemp();
+                    break;
+        case '3': printf("\n");
+                    break;
+        case '4': printf("search\n");
+                    break;
+        case '5':printf("modify\n");
+                    exit(0);
+        }
+    }
+    return 0;
+}
+int choice()
+{
+    int op;
+    do
+    {
+        printf("1>>LIST RECORDS OF ALL EMPLOYEE.\n"); 
+        printf("2>>ADD EMPLOYEE RECORD.\n");
+        printf("3>>DELETE EMPLOYEE RECORD.\n");
+        printf("4>>SEARCH A PARTICULR EMPLOYEE.\n");
+        printf("5>>MODIFY INFORMATION OF A EMPLOYEE.\n");
+        printf("ENTER YOUR CHOICE\n");
+        scanf("%d",&op);
+    }while(op<0||op>=5);
+    return op;
+}
 
