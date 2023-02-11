@@ -27,6 +27,7 @@ void addemp()
     ecount++;
     printf("Employee added successfully");
 }
+int choice()
 
 
 
